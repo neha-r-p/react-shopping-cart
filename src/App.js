@@ -18,8 +18,13 @@ function App() {
     setCart([...cart, item]);
   };
 
-  const removeItem = item => {
-	console.log('i dont want this')
+  const removeItem = remove => {
+	console.log('i dont want', remove);
+	
+	setCart(cart.filter(nope => {
+		console.log(nope.id)
+		return nope.id !== remove
+	}))
   }
 
   return (
